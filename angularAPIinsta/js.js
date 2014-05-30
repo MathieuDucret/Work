@@ -5,7 +5,7 @@
 		return {
 			fetchPopular: function(callback)
 			{
-	            var endPoint = "https://api.instagram.com/v1/users/3/media/recent/?client_id=7e20239c982b49e58cb52532e30d1cfd&callback=JSON_CALLBACK";
+	            var endPoint = "https://api.instagram.com/v1/users/256838588/media/recent/?client_id=7e20239c982b49e58cb52532e30d1cfd&callback=JSON_CALLBACK";
 
 	            $http.jsonp(endPoint).success(function(response)
 	            {
