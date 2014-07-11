@@ -1,0 +1,116 @@
+<Files .htaccess>
+deny from all
+</Files>
+<IfModule mod_rewrite.c> 
+RewriteBase /
+RewriteEngine on
+#Ajax Excludes
+RewriteCond %{REQUEST_URI} !^(.*)/ajax/
+RewriteCond %{REQUEST_URI} !admin/ckfinder/
+RewriteCond %{REQUEST_URI} !admin/jquery/
+RewriteCond %{REQUEST_URI} !ajax/
+RewriteCond %{REQUEST_URI} !payment/notificationPage.php
+RewriteCond %{REQUEST_URI} !payment/notificationPage_test.php
+RewriteCond %{REQUEST_URI} !payment/notificationPageVoicepay.php
+RewriteCond %{REQUEST_URI} !^(.*)index\.php
+RewriteCond %{REQUEST_URI} !^(.*)css\.php
+RewriteCond %{REQUEST_URI} !/admin/templates/updateDB.php
+RewriteCond %{REQUEST_URI} !crons/
+RewriteCond %{REQUEST_URI} !news_directory/rssfeed.php
+RewriteCond %{REQUEST_URI} !sitemap/sitemap_xml.php
+RewriteCond %{REQUEST_URI} !portfolio/gallery.tiltviewer.php
+
+RewriteRule ^(.*)\.php$ $1 [nc]
+
+
+RewriteCond %{REQUEST_URI} !payment/notificationPage.php
+RewriteCond %{REQUEST_URI} !admin/editpage.php
+RewriteCond %{REQUEST_URI} !ajax/insert.php
+RewriteCond %{REQUEST_URI} !villa/ajax.php
+#RewriteCond %{REQUEST_URI} !/admin/templates/updateDB.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1
+
+RewriteRule ^client/editJob/([0-9]+)$  index.php?module=client&page=edit_job&id=$1
+RewriteRule ^candidates/applyJob/([0-9]+)$  index.php?module=candidates&page=apply_job&id=$1
+RewriteRule ^candidates/viewJob/([0-9]+)$  index.php?module=candidates&page=view_job&id=$1
+RewriteRule ^client/viewApplicants/([0-9]+)$  index.php?module=client&page=view_applicants&id=$1
+
+RewriteRule ^admin/([a-zA-Z0-9_-]+)$  admin/index.php?page=$1
+#rule written to take the module name along with the pagename on page load
+
+RewriteRule ^admin/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$  admin/index.php?module=$1&page=$2
+RewriteRule ^admin/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9_-]+)/$ admin/index.php?module=$1&page=$2&id=$3&limit=$4&paged=$5&catname=$6
+RewriteRule ^admin/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)/([0-9]+)/([0-9]+)/$ admin/index.php?module=$1&page=$2&id=$3&limit=$4&paged=$5
+
+#RewriteRule ^admin/([a-zA-Z0-9_-]+)/([0-9]+)/([0-9]+)/$ admin/index.php?page=$1&limit=$2&paged=$3
+RewriteRule ^admin/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)/([0-9]+)/$ admin/index.php?module=$1&page=$2&limit=$3&paged=$4
+
+
+RewriteRule ^admin/viewrequestedlinks/([0-9]+)/$ admin/index.php?page=viewrequestedlinks&id=$1
+
+#for adminpanel items that require GET vars
+
+RewriteRule ^admin/actions/modules/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([,a-zA-Z0-9_-]+)/$ admin/index.php?module=$1&page=$2&id=$3 [L]
+RewriteRule ^admin/actions/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ admin/index.php?module=$1&page=$2&id=$3
+
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$  index.php?module=$1&page=$2
+
+RewriteRule ^client/cv_search/([0-9]+)/([0-9]+)/$ index.php?module=client&page=cv_search&limit=$1&paged=$2
+
+RewriteRule ^newsletter/unsubscribe/([a-zA-Z0-9_-]+)/$  index.php?module=newsletter&page=unsubscribe&user_id=$1
+
+RewriteRule ^estate_agent/property_profile/([0-9]+)/$  index.php?module=estate_agent&page=property_profile&id=$1
+
+RewriteRule ^language_setter/([0-9]+)/([a-zA-Z0-9_-]+)/$  index.php?module=language&page=set_language&language_id=$1&referrer=$2
+RewriteRule ^language_setter/([0-9]+)/$  index.php?module=language&page=set_language&language_id=$1
+
+RewriteRule ^shop/currency_setter/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$  index.php?module=shop&page=currency_setter&currency_id=$1&referrer=$2
+RewriteRule ^shop/currency_setter/([a-zA-Z0-9_-]+)/$  index.php?module=shop&page=currency_setter&currency_id=$1
+
+RewriteRule ^site_search/search/([0-9]+)/([0-9]+)/$  index.php?module=site_search&page=search&limit=$1&paged=$2
+
+RewriteRule ^shop/search/([0-9]+)/([0-9]+)/$  index.php?module=shop&page=search&limit=$1&paged=$2
+RewriteRule ^shop/category/(.*)/([0-9]+)/([0-9]+)/$  index.php?module=shop&page=category&item=$1&limit=$2&paged=$3
+
+RewriteRule ^shop/([a-zA-Z0-9_-]+)/(.*)/$  index.php?module=shop&page=$1&item=$2
+
+
+RewriteRule ^shop/([a-zA-Z0-9_-]+)/(.*)/([0-9]+)/([0-9]+)/$  index.php?module=shop&page=$1&item=$2&limit=$3&paged=$4
+
+RewriteRule ^villa/([a-zA-Z0-9_-]+)/([0-9]+)/(.*)$  index.php?module=villa&location=$1&villa_id=$2&name=$3&page=profile
+RewriteRule ^villa/([a-zA-Z0-9_-]+)/$  index.php?module=villa&region=$1&page=region
+RewriteRule ^villa/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$  index.php?module=villa&region=$1&location=$2&page=location
+RewriteRule ^villa/([0-9]+)/booking$  index.php?module=villa&villa_id=$1&page=booking
+
+
+
+RewriteRule ^payment/failure/([a-zA-Z0-9_-]+)/(.*)$  index.php?module=payment&page=failure&auth_id=$1&tx_id=$2
+RewriteRule ^payment/success/([a-zA-Z0-9_-]+)/(.*)$  index.php?module=payment&page=success&auth_id=$1&tx_id=$2
+
+#link_directory rules
+#to view all the approved links in a category
+RewriteRule ^link_directory/([a-zA-Z0-9_-]+)/([0-9]+)/$ index.php?module=link_directory&page=viewlinkclientpaginated&id=$2
+
+RewriteRule ^raf/([a-zA-Z0-9_-]+)/$ index.php?module=raf&page=$1
+
+#for next previous menu and setting the number of results per page
+RewriteRule ^link_directory/([0-9]+)/([0-9]+)/([0-9]+)/$ index.php?module=link_directory&page=viewlinkclientpaginated&id=$1&limit=$2&paged=$3
+RewriteRule ^link_directory/([a-zA-Z0-9_-]+)/([0-9]+)/([0-9]+)/([0-9]+)/$ index.php?module=link_directory&page=$1&id=$2&limit=$3&paged=$4
+
+#news_directory rules
+#to view all articles in a NEWS category
+RewriteRule ^news_directory/article/(.*)$ index.php?module=news_directory&page=article&id=$1 [L]
+RewriteRule ^news_directory/([a-zA-Z0-9_-]+)/([0-9]+)/$ index.php?module=news_directory&page=article_list&currentpage=$1&id=$2
+
+#for next previous menu and setting the number of results per page
+RewriteRule ^news_directory/([0-9]+)/([0-9]+)/([0-9]+)/$ index.php?module=news_directory&page=article_list&id=$1&limit=$2&paged=$3
+RewriteRule ^news_directory/([a-zA-Z0-9_-]+)/([0-9]+)/([0-9]+)/([0-9]+)/$ index.php?module=news_directory&page=$1&id=$2&limit=$3&paged=$4
+
+
+
+
+
+
+</IfModule>

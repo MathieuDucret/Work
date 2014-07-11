@@ -1,0 +1,71 @@
+.links {padding:5px 0 0 1em; margin:0; list-style:none; height:40px; position:relative; background:transparent url(http://www.britishetiquettecoaching.co.uk/links/pro_five_0c.gif) repeat-x left bottom; font-size:11px;}
+.links li {float:left; height:40px; margin-right:1px;}
+.links li a {display:block; float:left; height:40px; line-height:35px; color:#333; text-decoration:none; font-family:arial, verdana, sans-serif; font-weight:bold; text-align:center; padding:0 0 0 4px; cursor:pointer; background:url(http://www.britishetiquettecoaching.co.uk/links/pro_five_0a.gif) no-repeat;}
+.links li a b {float:left; display:block; padding:0 16px 5px 12px; background:url(http://www.britishetiquettecoaching.co.uk/links/pro_five_0b.gif) no-repeat right top;}
+.links li.current a {color:#000; background:url(http://www.britishetiquettecoaching.co.uk/links/pro_five_2a.gif) no-repeat;}
+.links li.current a b {background:url(http://www.britishetiquettecoaching.co.uk/links/pro_five_2b.gif) no-repeat right top;}
+.links li a:hover {color:#000; background: url(http://www.britishetiquettecoaching.co.uk/links/pro_five_1a.gif) no-repeat;}
+.links li a:hover b {background:url(http://www.britishetiquettecoaching.co.uk/links/pro_five_1b.gif) no-repeat right top;}
+.links li.current a:hover {color:#000; background: url(http://www.britishetiquettecoaching.co.uk/links/pro_five_2a.gif) no-repeat; cursor:default;}
+.links li.current a:hover b {background:url(http://www.britishetiquettecoaching.co.uk/links/pro_five_2b.gif) no-repeat right top;}
+
+
+body{
+	background-color:#006;
+
+	font-family:Tahoma;
+}
+
+img { 
+margin-left: 20px;
+margin-right:20px;
+}
+#header{
+	background-color:#fff;
+}
+#wrapper{
+	background-color:#fff;
+	width:920px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+#content{
+	margin-left:15px;
+	margin-right:15px;
+	text-align:justify;
+}
+#menu{
+	text-align:center;
+}
+#footer{
+	text-align:center;
+}
+#ic a{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	font-size:8pt;
+	font-weight:bold;
+	color:#906;
+}
+#errmsg{
+	font-size:10pt;
+	background-color:#FC9; 
+	border:solid 1px #900;
+}
+.searchtitle        {
+    background: #7A0004;
+    color:      #ffffff;
+    font-size:  10pt;
+    padding:    2px;
+}
+.searchResult1 {
+    background: #FFEBCE;
+    color: #840008;
+    font-size: 10pt;
+    }
+.searchResult2 {
+    background: #FFDBAD;
+    color: #840008;
+    font-size: 10pt;
+    }
