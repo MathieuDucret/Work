@@ -50,6 +50,7 @@ p {
     margin-bottom: 50px;
 }
 
+
 @media(min-width:767px) {
     p {
         margin: 0 0 35px;
@@ -75,6 +76,8 @@ p {
         height: 25%;
          margin-bottom: 50px;
     }
+    
+   
     
 }
 
@@ -105,6 +108,7 @@ a:focus {
 
 .navbar-brand {
     font-weight: 700;
+    font-size: 25px;
 }
 
 .navbar-brand:focus {
@@ -139,6 +143,7 @@ a:focus {
     outline: 0;
 }
 
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -158,6 +163,43 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
+    
+    .navbar-brand
+    {
+        font-size: 30px;
+    }
+    
+    ////////
+    .navbar-custom a {
+    color: #35426a;
+    }
+
+    .navbar-custom .nav li a {
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+    }
+
+    .navbar-custom .nav li a:hover,
+    .navbar-custom .nav li a:focus,
+    .navbar-custom .nav li.active {
+        outline: 0;
+        background-color: #838282;
+    }
+
+    .navbar-toggle {
+        padding: 4px 6px;
+        font-size: 16px;
+        color: #35426a;
+    }
+
+    .navbar-toggle:focus,
+    .navbar-toggle:active {
+        outline: 0;
+    }
+    ///////
+    
+    
 }
 
 .intro {
@@ -361,31 +403,32 @@ a:focus {
     padding-top: 80px;
 }
 
+.about-section h1{
+        position: absolute;
+        margin-top: -4%;
+        margin-left: -1%;
+    }
+
 .contact-section {
     padding-top: 100px;
     margin-bottom: -10%;
 }
 
 
-#map {
-    width: 100%;
-    height: 200px;
-    margin-top: 50px;
-}
-
 @media(min-width:767px) {
     .about-section {
         padding-top: 80px;
     }
 
+    .about-section h1{
+        position: absolute;
+        margin-top: -2%;
+        margin-left: -3%;
+    }
+    
     .contact-section {
         padding: 150px 0;
         margin-bottom: -30%;
-    }
-
-    #map {
-        height: 200px;
-        margin-top: 250px;
     }
 }
 
